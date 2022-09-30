@@ -3,17 +3,17 @@ import React from "react";
 function Card() {
   return (
     <>
-      <div class="card mb-3">
+      <div className="card mb-3">
         <img
           src="https://i.blogs.es/f007ba/daisy-755517_960_720/1366_2000.jpg"
-          class="card-img-top"
+          className="card-img-top"
           alt="flores"
         />
-        <div class="card-body">
-          <h5 class="card-title">MARCA</h5>
-          <p class="card-text">modelo</p>
-          <p class="card-text">
-            <small class="text-muted">PRECIO $ 400</small>
+        <div className="card-body">
+          <h5 className="card-title">MARCA</h5>
+          <p className="card-text">modelo</p>
+          <p className="card-text">
+            <small className="text-muted">PRECIO $ 400</small>
           </p>
         </div>
       </div>
