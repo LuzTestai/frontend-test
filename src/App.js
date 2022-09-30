@@ -1,12 +1,14 @@
-import React, { Suspense } from "react";
+import React from "react";
 //import Navbar from "./Navbar";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 // import "./sass/index.scss"
 
 function App() {
   return (
     <>
-      <Home />
+      <div className="container">
+        <Home />
+      </div>
     </>
   );
 }
