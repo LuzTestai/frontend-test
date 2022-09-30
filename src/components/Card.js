@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/global.css";
 //  src="https://i.blogs.es/f007ba/daisy-755517_960_720/1366_2000.jpg"
 function Card() {
   return (
