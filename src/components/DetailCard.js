@@ -1,0 +1,34 @@
+import React from "react";
+//  src="https://i.blogs.es/f007ba/daisy-755517_960_720/1366_2000.jpg"
+function Card() {
+  return (
+    <>
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img
+              src="https://i.blogs.es/f007ba/daisy-755517_960_720/1366_2000.jpg"
+              class="img-fluid rounded-start"
+              alt="FLOR"
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="content-card-detail">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Card;
