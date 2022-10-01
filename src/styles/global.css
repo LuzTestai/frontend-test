@@ -14,6 +14,49 @@
 .img-card {
   padding: 10px;
 }
+.m-navbar {
+  margin: 0 20px;
+}
+.m-arrow-left {
+  margin: 20px;
+}
+
+.activeNav {
+  text-decoration-line: overline;
+}
+
+.container-selected {
+  display: flex;
+  justify-content: space-between;
+}
+.container-selected select {
+  width: 49%;
+}
+.msj-advertencia {
+  color: red;
+  font-size: 12px;
+}
+.container-carrito {
+  background-color: rgb(136, 213, 248);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+.container-carrito span {
+  background-color: rgb(53, 168, 245);
+}
+
+/* .selectionDetailContainer {
+  display: flex;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.selectionDetailContainer spam {
+  padding: 10px;
+}
+
+.activeSelectionDetail {
+  background-color: rgb(139, 209, 253);
+} */
 
 @media (max-width: 600px) {
   .container-app {

@@ -20,7 +20,7 @@ function Detail() {
   return (
     <>
       <div>
-        <DetailCard product={product} clickBtn={clickAddCard} />
+        <DetailCard product={product} />
       </div>
     </>
   );

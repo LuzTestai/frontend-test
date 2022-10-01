@@ -11,19 +11,13 @@ function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const productos = useSelector((state) => state.products);
+  const [spinner, setSpinner] = useState(false);
 
   useEffect(() => {
-    if (productos) {
-      dispatch(fetchProducts());
-    }
+    dispatch(fetchProducts());
   }, []);
-  useEffect(() => {
-    console.log({ productos });
-  }, [productos]);
 
   const clickShowProduct = (id) => {
-    console.log({ id });
-    console.log("hola clickie");
     navigate(`/Detail/${id}`);
   };
 

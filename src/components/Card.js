@@ -3,7 +3,7 @@ import React from "react";
 function Card({ product, clickBtn }) {
   return (
     <>
-      <div className="card mb-3 p-3">
+      <div className="card mb-3 p-2">
         <img
           src={product.imgUrl}
           className="img-fluid rounded-start img-card"
