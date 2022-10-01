@@ -4,6 +4,15 @@
 .price {
   font-size: 25px;
 }
+.btn-show-detail {
+  border-color: rgb(53, 168, 245);
+  color: rgb(53, 168, 245);
+}
+.btn-show-detail:hover {
+  border-color: rgb(240, 245, 248) !important;
+  color: rgb(235, 246, 254) !important;
+  background-color: rgb(41, 163, 245) !important;
+}
 .sin-stock {
   color: red;
   font-size: 15px;
@@ -19,6 +28,11 @@
 }
 .m-arrow-left {
   margin: 20px;
+}
+.row-detail {
+  padding: 30px 20px;
+  background-color: rgb(240, 245, 248);
+  border-radius: 20px;
 }
 
 .activeNav {

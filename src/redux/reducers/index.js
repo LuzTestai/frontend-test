@@ -1,4 +1,8 @@
-import { RECIVE_ALL_PRODUCTS, RECEIVE_ONE_PRODUCT } from "../actions/types";
+import {
+  RECIVE_ALL_PRODUCTS,
+  RECEIVE_ONE_PRODUCT,
+  FILTER_PRODUCTS,
+} from "../actions/types";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -6,6 +10,8 @@ const reducer = (state, action) => {
       return { ...state, products: action.products };
     case RECEIVE_ONE_PRODUCT:
       return { ...state, product: action.product };
+    case FILTER_PRODUCTS:
+      return { ...state, filters: action.filters };
 
     default:
       return state;

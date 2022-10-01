@@ -1,4 +1,8 @@
-import { RECIVE_ALL_PRODUCTS, RECEIVE_ONE_PRODUCT } from "../actions/types";
+import {
+  RECIVE_ALL_PRODUCTS,
+  RECEIVE_ONE_PRODUCT,
+  FILTER_PRODUCTS,
+} from "../actions/types";
 
 export const receivedProducts = (products) => ({
   type: RECIVE_ALL_PRODUCTS,
@@ -7,6 +11,10 @@ export const receivedProducts = (products) => ({
 export const receivedProductDetail = (product) => ({
   type: RECEIVE_ONE_PRODUCT,
   product,
+});
+export const filterProduct = (filters) => ({
+  type: FILTER_PRODUCTS,
+  filters,
 });
 
 export const fetchProducts = () => (dispatch) => {
@@ -25,4 +33,8 @@ export const fetchProductDetail = (id) => (dispatch) => {
       dispatch(receivedProductDetail(resp));
     })
     .catch((err) => console.err(err));
+};
+
+export const fetchProductSearch = (search) => (dispatch) => {
+  dispatch(filterProduct(search));
 };

@@ -5,6 +5,7 @@ import reducer from "./reducers";
 const initialState = {
   products: [],
   product: {},
+  filsters: [],
 };
 
 const composedEnhancers = compose(

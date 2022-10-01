@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ArrowLeft from "../assets/svg/arrow.left";
 
 function Card({ product }) {
   console.log(product);
@@ -23,18 +22,15 @@ function Card({ product }) {
   return (
     <>
       <div className="card mb-3">
-        <div className="row g-0 pd-detail-row">
-          <div className="m-arrow-left">
-            <ArrowLeft />
-          </div>
-          <div className="col-md-4 p-3">
+        <div className="row g-0 row-detail">
+          <div className="col-md-6 p-3 px-5">
             <img
               src={product.imgUrl}
-              className="img-fluid rounded-start"
+              className="card-img-top mb-5 mb-md-0"
               alt="FLOR"
             />
           </div>
-          <div className="col-md-8 p-3">
+          <div className="col-md-6 p-3">
             <h5 className="card-title">{product.brand}</h5>
             <ul>
               <li>Modelo : {product.model}</li>

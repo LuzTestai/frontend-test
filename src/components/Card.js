@@ -10,7 +10,7 @@ function Card({ product, clickBtn }) {
           alt="flores"
         />
         <div className="card-body">
-          <h5 className="card-title">{product.brand}</h5>
+          <h5 className="fw-bolder">{product.brand}</h5>
           <p className=" card-text">{product.model}</p>
           <p className="card-text">
             {product.price ? (
@@ -22,7 +22,7 @@ function Card({ product, clickBtn }) {
           <button
             onClick={() => clickBtn(product.id)}
             type="button"
-            className="btn btn-info"
+            className="btn-show-detail btn mt-auto"
           >
             VER PRODUCTO
           </button>
