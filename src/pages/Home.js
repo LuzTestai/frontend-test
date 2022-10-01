@@ -5,8 +5,10 @@ import Card from "../components/Card";
 import { fetchProducts } from "../redux/actions/index";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const productos = useSelector((state) => state.products);
 
@@ -18,6 +20,12 @@ function Home() {
   useEffect(() => {
     console.log({ productos });
   }, [productos]);
+
+  const clickShowProduct = (id) => {
+    console.log({ id });
+    console.log("hola clickie");
+    navigate(`/Detail/${id}`);
+  };
 
   return (
     <>
@@ -31,7 +39,7 @@ function Home() {
                   data-aos="fade-up"
                   className="col-sm-6 col-md-4 col-lg-3"
                 >
-                  <Card product={product} />
+                  <Card clickBtn={clickShowProduct} product={product} />
                 </div>
               );
             })}

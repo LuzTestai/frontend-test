@@ -1,12 +1,25 @@
 .container-app {
   margin: 40px 50px;
 }
-
 .price {
   font-size: 25px;
 }
-
 .sin-stock {
   color: red;
   font-size: 15px;
+}
+.pd-detail-row {
+  padding: 0px 30px 20px;
+}
+.img-card {
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .container-app {
+    margin: 0;
+  }
+  .img-card {
+    padding: 40px;
+  }
 }
