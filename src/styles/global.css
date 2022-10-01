@@ -1,7 +1,12 @@
 .container-app {
-  margin: 30px;
+  margin: 40px 50px;
 }
-.content-card-detail {
-  flex: 1 1 auto;
-  padding: 40px 60px;
+
+.price {
+  font-size: 25px;
+}
+
+.sin-stock {
+  color: red;
+  font-size: 15px;
 }

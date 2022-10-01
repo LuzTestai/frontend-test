@@ -11,39 +11,30 @@ function Home() {
   const productos = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    if (productos) {
+      dispatch(fetchProducts());
+    }
   }, []);
+  useEffect(() => {
+    console.log({ productos });
+  }, [productos]);
 
   return (
     <>
       <div>
         <div className="text-center">
           <div className="row">
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card />
-            </div>
+            {productos.map((product) => {
+              return (
+                <div
+                  key={product.id}
+                  data-aos="fade-up"
+                  className="col-sm-6 col-md-4 col-lg-3"
+                >
+                  <Card product={product} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
