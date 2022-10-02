@@ -67,7 +67,7 @@ function Header() {
               ZARA
             </NavLink>
             {location.pathname.includes("/detail") && (
-              <span class="navbar-nav mr-auto">
+              <span className="navbar-nav mr-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "activeNav nav-link" : "nav-link"
