@@ -3,7 +3,7 @@ import React from "react";
 function Card({ product, clickBtn }) {
   return (
     <>
-      <div className="card mb-3 p-2">
+      <div key={product.id} className="card mb-3 p-2">
         <img
           src={product.imgUrl}
           className="img-fluid rounded-start img-card"
@@ -16,7 +16,7 @@ function Card({ product, clickBtn }) {
             {product.price ? (
               <small className="text-muted price ">${product.price}</small>
             ) : (
-              <p className="sin-stock">(Sin stock)</p>
+              <small className="sin-stock">(Sin stock)</small>
             )}
           </p>
           <button

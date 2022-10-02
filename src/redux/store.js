@@ -8,6 +8,7 @@ const initialState = {
   filsters: [],
   cardQuantity: 0,
   loadingCard: false,
+  search: false,
 };
 
 const composedEnhancers = compose(

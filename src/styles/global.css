@@ -1,6 +1,15 @@
 .container-app {
   margin: 40px 50px;
 }
+/* Navbar CSS */
+.m-navbar {
+  margin: 0 20px;
+}
+.activeNav {
+  text-decoration-line: overline;
+}
+
+/* Detail CSS */
 .price {
   font-size: 25px;
 }
@@ -20,25 +29,12 @@
 .pd-detail-row {
   padding: 0px 30px 20px;
 }
-.img-card {
-  padding: 10px;
-}
-.m-navbar {
-  margin: 0 20px;
-}
 .m-arrow-left {
   margin: 20px;
 }
 .row-detail {
   padding: 30px 20px;
-  background-color: rgb(240, 245, 248);
-  border-radius: 20px;
 }
-
-.activeNav {
-  text-decoration-line: overline;
-}
-
 .container-selected {
   display: flex;
   justify-content: space-between;
@@ -46,18 +42,53 @@
 .container-selected select {
   width: 49%;
 }
+/* Mensaje de advertencia  */
+
+.min-heigth {
+  min-height: 20px;
+}
 .msj-advertencia {
   color: red;
   font-size: 12px;
 }
+
+/* Card Css */
+.img-card {
+  padding: 10px;
+}
+.bg-card {
+  background-color: rgb(240, 245, 248);
+}
+
+/* Spinner CSS */
+.container-spinner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  height: 100vh;
+  align-items: center;
+}
+
+.spinner {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  background-color: rgb(150, 149, 149);
+}
+
+/* Carrito CSS */
 .container-carrito {
   background-color: rgb(136, 213, 248);
   padding: 5px 12px;
   border-radius: 6px;
+  min-height: 40px;
 }
 .container-carrito span {
   background-color: rgb(53, 168, 245);
 }
+
+/* Boton Carrito en Detail */
 .btn-add-card {
   font-weight: 500;
   padding: 15px;
@@ -71,9 +102,6 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-.min-heigth {
-  min-height: 20px;
-}
 
 .pulse {
   font-weight: bolder;
@@ -85,6 +113,14 @@
   animation-duration: 3s;
   border-radius: 5px;
   animation-iteration-count: infinite;
+}
+
+/* Detail Link */
+.link-go-back {
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(11, 167, 229);
+  padding: 0 50px 20px;
 }
 
 @keyframes pulse {
@@ -122,5 +158,11 @@
   }
   .img-card {
     padding: 40px;
+  }
+  .m-navbar {
+    margin: 0 0;
+  }
+  .bg-card {
+    background-color: rgb(255, 255, 255);
   }
 }

@@ -4,6 +4,7 @@ import {
   FILTER_PRODUCTS,
   ADD_TO_CARD,
   LOADING_CARD,
+  SEARCH_STATE,
 } from "../actions/types";
 
 const reducer = (state, action) => {
@@ -21,6 +22,8 @@ const reducer = (state, action) => {
       };
     case LOADING_CARD:
       return { ...state, loadingCard: action.loadingCard };
+    case SEARCH_STATE:
+      return { ...state, search: action.search };
 
     default:
       return state;

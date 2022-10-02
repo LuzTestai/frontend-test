@@ -4,8 +4,10 @@ import {
   FILTER_PRODUCTS,
   ADD_TO_CARD,
   LOADING_CARD,
+  SEARCH_STATE,
 } from "../actions/types";
-
+import { setLocalStorage } from "../..//utils/setLocalStorage";
+const API = "https://front-test-api.herokuapp.com";
 export const receivedProducts = (products) => ({
   type: RECIVE_ALL_PRODUCTS,
   products,
@@ -26,23 +28,28 @@ export const loadingCard = (loadingCard) => ({
   type: LOADING_CARD,
   loadingCard,
 });
+export const searchState = (search) => ({
+  type: SEARCH_STATE,
+  search,
+});
 
 export const fetchProducts = () => (dispatch) => {
-  return fetch("https://front-test-api.herokuapp.com/api/product")
+  return fetch(`${API}/api/product`)
     .then((resp) => resp.json())
     .then((resp) => {
       dispatch(receivedProducts(resp));
+      setLocalStorage("productos", resp);
     })
-    .catch((err) => console.err(err));
+    .catch((err) => console.log(err));
 };
 
 export const fetchProductDetail = (id) => (dispatch) => {
-  return fetch(`https://front-test-api.herokuapp.com/api/product/${id}`)
+  return fetch(`${API}/api/product/${id}`)
     .then((resp) => resp.json())
     .then((resp) => {
       dispatch(receivedProductDetail(resp));
     })
-    .catch((err) => console.err(err));
+    .catch((err) => console.log(err));
 };
 
 export const fetchProductSearch = (search) => (dispatch) => {
@@ -50,7 +57,7 @@ export const fetchProductSearch = (search) => (dispatch) => {
 };
 
 export const addToCard = (card) => (dispatch) => {
-  return fetch(`https://front-test-api.herokuapp.com/api/cart`, {
+  return fetch(`${API}/api/cart`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,11 +66,13 @@ export const addToCard = (card) => (dispatch) => {
   })
     .then((resp) => resp.json())
     .then((resp) => {
-      console.log("HOLA BEBE", resp.count);
       dispatch(updateCard(resp.count));
     });
 };
 
 export const loadingAddCard = (state) => (dispatch) => {
   dispatch(loadingCard(state));
+};
+export const fetchSearch = (search) => (dispatch) => {
+  dispatch(searchState(search));
 };

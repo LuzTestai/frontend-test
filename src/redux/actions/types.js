@@ -4,3 +4,4 @@ export const RECEIVE_ONE_PRODUCT = "RECEIVE_ONE_PRODUCT";
 export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 export const ADD_TO_CARD = "ADD_TO_CARD";
 export const LOADING_CARD = "LOADING_CARD";
+export const SEARCH_STATE = "SEARCH_STATE";

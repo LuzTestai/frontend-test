@@ -1,5 +1,4 @@
 import React from "react";
-//import { Routes, Route, Navigate, useNavigate, useMatch } from "react-router";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
@@ -19,13 +18,5 @@ function App() {
     </Router>
   );
 }
-
-//  <Header />
-//  <div className="container-app">
-//    <Routes>
-//      <Route path="/" element={<Home />} />
-//      <Route path="/detail" element={<Detail />} />
-//    </Routes>
-//  </div>
 
 export default App;

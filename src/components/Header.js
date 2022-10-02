@@ -1,58 +1,91 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   fetchProducts,
   fetchProductSearch,
   loadingCard,
+  receivedProducts,
+  fetchSearch,
 } from "../redux/actions/index";
 import CarritoSvg from "../assets/svg/carrito";
 
 import { useDispatch, useSelector } from "react-redux";
+import { getLocalStorage } from "../utils/getLocalStorage";
 
 function Header() {
   const location = useLocation();
   const dispatch = useDispatch();
   const productos = useSelector((state) => state.products);
   const card = useSelector((state) => state.cardQuantity);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
-
-  const search = (search) => {
-    const productFilter = productos.filter((product) =>
-      product.model.toLowerCase().includes(search)
-    );
-    if (search) {
-      dispatch(fetchProductSearch(productFilter));
-    } else {
-      dispatch(fetchProductSearch([]));
+    const localStorageProcutos = getLocalStorage("productos");
+    if (
+      localStorageProcutos !== null &&
+      localStorageProcutos?.length > 0 &&
+      productos?.length === 0
+    ) {
+      dispatch(receivedProducts(localStorageProcutos));
+    } else if (localStorageProcutos === null && productos?.length === 0) {
+      dispatch(fetchProducts());
     }
-  };
+  }, [dispatch, productos]);
+
+  useEffect(() => {
+    dispatch(fetchSearch(search));
+  }, [dispatch, search]);
 
   useEffect(() => {
     dispatch(loadingCard(false));
-  }, [card]);
+  }, [card, dispatch]);
+
+  const doSearch = (search) => {
+    const productFilter = productos.filter((product) => {
+      return product.model.toLowerCase().includes(search);
+    });
+    if (search) {
+      setSearch(true);
+      dispatch(fetchProductSearch(productFilter));
+    } else {
+      setSearch(false);
+      dispatch(fetchProductSearch([]));
+    }
+  };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid m-navbar">
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "activeNav navbar-brand" : "navbar-brand"
-            }
-            to="/home"
-          >
-            ZARA
-          </NavLink>
+          <div className="d-flex">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "activeNav navbar-brand" : "navbar-brand"
+              }
+              to="/home"
+            >
+              ZARA
+            </NavLink>
+            {location.pathname.includes("/detail") && (
+              <span class="navbar-nav mr-auto">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeNav nav-link" : "nav-link"
+                  }
+                  to="/detail"
+                >
+                  Producto
+                </NavLink>
+              </span>
+            )}
+          </div>
 
           <div className="" id="navbarText">
             <div className="d-flex">
               {location.pathname === "/home" ? (
                 <form className="d-flex" role="search">
                   <input
-                    onChange={(event) => search(event.target.value)}
+                    onChange={(event) => doSearch(event.target.value)}
                     className="form-control me-2"
                     type="search"
                     placeholder="search"

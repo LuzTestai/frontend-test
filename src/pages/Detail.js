@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import DetailCard from "../components/DetailCard";
-import "../styles/global.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetail } from "../redux/actions/index";
-import { Routes, Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+import DetailCard from "../components/DetailCard";
+import "../styles/global.css";
 
 function Detail() {
   const { id } = useParams();
@@ -12,11 +13,8 @@ function Detail() {
 
   useEffect(() => {
     dispatch(fetchProductDetail(id));
-  }, []);
+  }, [dispatch, id]);
 
-  const clickAddCard = () => {
-    console.log("hice click");
-  };
   return (
     <>
       <div>
