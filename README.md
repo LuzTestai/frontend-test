@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="public/screenshot.jpg" alt="ScreenShot" width="80" height="80">
+    <img src="public/screenshot.jpg" alt="ScreenShot" width="100%" height="auto">
   </a>
 
 </div>
