@@ -2,9 +2,39 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About The Project
 
-In the project directory, you can run:
+It is a small ecommerce, where we have 2 views, the "HOME", where we show all existing products and the "DETAIL" view where you can see the details of the selected product. We also have a cart, where you will be able to add products and have a count of how many products you added to the cart.
+We also have a search engine, to facilitate the search for the product you are looking for.
+
+* Home : 
+    - All the products
+    - Search engine
+    - Link
+    - Card.
+* Detail : 
+  - Description :   o Marca
+                    o Modelo
+                    o Precio
+                    o CPU
+                    o RAM
+                    o Sistema Operativo
+                    o Resolucion de pantalla
+                    o Bateria
+                    o Camaras
+                    o Dimensiones
+                    o Peso
+
+ - Actions :        o Add to card
+                    o Selected Colors
+                    o Selected Storage
+
+### `Build With`
+This section should list any major frameworks/libraries used to bootstrap your project. Here are a few examples.
+
+
+* [![React][React.js]][React-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 ### `npm start`
 
@@ -39,31 +69,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
 
