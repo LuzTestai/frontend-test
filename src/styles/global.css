@@ -58,19 +58,63 @@
 .container-carrito span {
   background-color: rgb(53, 168, 245);
 }
-
-/* .selectionDetailContainer {
-  display: flex;
-  cursor: pointer;
-  margin: 10px 0;
+.btn-add-card {
+  font-weight: 500;
+  padding: 15px;
+  min-width: 210px;
+  box-shadow: 0 0 0 0 rgb(0, 0, 0, 0.5);
 }
-.selectionDetailContainer spam {
-  padding: 10px;
+.btn-add-card:hover {
+  font-weight: 500;
+  box-shadow: 0 0 0 0 rgb(0, 0, 0, 0.5);
+  animation-name: pulse-btn;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+.min-heigth {
+  min-height: 20px;
 }
 
-.activeSelectionDetail {
-  background-color: rgb(139, 209, 253);
-} */
+.pulse {
+  font-weight: bolder;
+  padding: 15px;
+  min-width: 210px;
+  box-shadow: 0 0 0 0 rgb(0, 0, 0, 0.5);
+  border: none;
+  animation-name: pulse;
+  animation-duration: 3s;
+  border-radius: 5px;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: rgb(14, 14, 14);
+    background-color: rgb(199, 238, 245);
+  }
+  30% {
+    color: rgb(68, 68, 69);
+    background-color: rgb(133, 235, 244);
+  }
+  100% {
+    color: rgb(248, 252, 253);
+    background-color: rgb(35, 220, 241);
+  }
+}
+@keyframes pulse-btn {
+  0% {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 0 rgb(1, 200, 245);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 25px rgba(256, 256, 256, 0);
+  }
+  100% {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
+  }
+}
 
 @media (max-width: 600px) {
   .container-app {

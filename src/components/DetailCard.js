@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCard, loadingAddCard } from "../redux/actions/index";
 
 function Card({ product }) {
   console.log(product);
+  const dispatch = useDispatch();
   const [storageSelected, setStorageSelected] = useState("");
   const [colorsSelected, setColorsSelected] = useState("");
   const [disabledBtn, setDisabledBtn] = useState(true);
+  const loadingCard = useSelector((state) => state.loadingCard);
 
   const storages = product.options?.storages;
   const colors = product.options?.colors;
@@ -16,7 +20,13 @@ function Card({ product }) {
   }, [storageSelected, colorsSelected]);
 
   const clickAddCarito = () => {
-    console.log("carrito");
+    const card = {
+      id: product.id,
+      colorCode: colorsSelected,
+      storageCode: storageSelected,
+    };
+    dispatch(addToCard(card));
+    dispatch(loadingAddCard(true));
   };
 
   return (
@@ -43,7 +53,7 @@ function Card({ product }) {
               <li>
                 Camaras :
                 <p>
-                  - Principal:{" "}
+                  - Principal:
                   {product.primaryCamera?.map((opt) => {
                     return <span> {opt}</span>;
                   })}
@@ -87,12 +97,10 @@ function Card({ product }) {
                 })}
               </select>
             </div>
-            <div>
-              {disabledBtn && (
-                <label className="msj-advertencia">
-                  Es obligatorio elegir una opción.
-                </label>
-              )}
+            <div className="min-heigth">
+              <label className="msj-advertencia">
+                {disabledBtn && "Es obligatorio elegir una opción"}
+              </label>
             </div>
 
             <div className="mt-4">
@@ -100,9 +108,11 @@ function Card({ product }) {
                 disabled={disabledBtn}
                 onClick={() => clickAddCarito()}
                 type="button"
-                className="btn btn-info"
+                className={`btn btn-info  ${
+                  loadingCard ? "pulse" : "btn-add-card"
+                }`}
               >
-                Añadir
+                {loadingCard ? "AGREGANDO ..." : "AGREGAR AL CARRITO"}
               </button>
             </div>
           </div>

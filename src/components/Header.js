@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { fetchProducts, fetchProductSearch } from "../redux/actions/index";
+import {
+  fetchProducts,
+  fetchProductSearch,
+  loadingCard,
+} from "../redux/actions/index";
 import CarritoSvg from "../assets/svg/carrito";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -9,24 +13,13 @@ function Header() {
   const location = useLocation();
   const dispatch = useDispatch();
   const productos = useSelector((state) => state.products);
+  const card = useSelector((state) => state.cardQuantity);
 
-  console.log(location);
   useEffect(() => {
-    //console.log("entre");
     dispatch(fetchProducts());
   }, []);
 
-  const dividirCadena = (cadenaADividir, separador) => {
-    var arrayDeCadenas = cadenaADividir.split(separador);
-    var arr = [];
-    for (var i = 0; i < arrayDeCadenas.length; i++) {
-      arr.push(arrayDeCadenas[i] + " ");
-    }
-    return arr;
-  };
-
   const search = (search) => {
-    console.log({ search });
     const productFilter = productos.filter((product) =>
       product.model.toLowerCase().includes(search)
     );
@@ -36,6 +29,10 @@ function Header() {
       dispatch(fetchProductSearch([]));
     }
   };
+
+  useEffect(() => {
+    dispatch(loadingCard(false));
+  }, [card]);
 
   return (
     <>
@@ -67,7 +64,7 @@ function Header() {
               <div className=" position-relative container-carrito">
                 <CarritoSvg />
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill ">
-                  99+
+                  {card}
                 </span>
               </div>
             </div>

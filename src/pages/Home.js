@@ -6,13 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  //const dispatch = useDispatch();
   const productos = useSelector((state) => state.products);
   const filters = useSelector((state) => state.filters);
 
   const clickShowProduct = (id) => {
-    console.log({ id });
-    console.log("hola clickie");
     navigate(`/Detail/${id}`);
   };
 
@@ -26,7 +23,6 @@ function Home() {
                   return (
                     <div
                       key={product.id}
-                      // data-aos="fade-up"
                       className="col-sm-6 col-md-4 col-lg-3 "
                     >
                       <Card clickBtn={clickShowProduct} product={product} />
@@ -37,7 +33,6 @@ function Home() {
                   return (
                     <div
                       key={product.id}
-                      // data-aos="fade-up"
                       className="col-sm-6 col-md-4 col-lg-3 "
                     >
                       <Card clickBtn={clickShowProduct} product={product} />

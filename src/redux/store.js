@@ -6,6 +6,8 @@ const initialState = {
   products: [],
   product: {},
   filsters: [],
+  cardQuantity: 0,
+  loadingCard: false,
 };
 
 const composedEnhancers = compose(
