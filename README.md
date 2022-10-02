@@ -1,4 +1,4 @@
-# Frontend-Test :rocket:
+# Frontend-Test 
 
 
 <!-- PROJECT LOGO -->
@@ -13,7 +13,7 @@
 #### GitHub (All Releases)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)]()  
 
-## About The Project
+## About The Project :point_down:
 
 It is a small ecommerce, where we have 2 views, the "HOME", where we show all existing products and the "DETAIL" view where you can see the details of the selected product. We also have a cart, where you will be able to add products and have a count of how many products you added to the cart.
 We also have a search engine, to facilitate the search for the product you are looking for.
@@ -46,7 +46,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * React.js
 * Boostrap
 
-## Getting Started
+## Getting Started :rocket:
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.

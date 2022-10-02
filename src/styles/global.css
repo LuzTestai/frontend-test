@@ -166,3 +166,12 @@
     background-color: rgb(255, 255, 255);
   }
 }
+@media (min-width: 1200px) {
+  .bg-card {
+    width: 70%;
+  }
+  .container-card-responsive {
+    display: flex;
+    justify-content: center;
+  }
+}
